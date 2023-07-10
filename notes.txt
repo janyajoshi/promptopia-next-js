@@ -1,0 +1,12 @@
+?NEXTAUTH_SECRET
+=>  random string used to hash secrets
+
+?create NEXTAUTH_SECRET
+=>  within terminal, write foll
+    openssl rand -base64 32
+
+?above command not working locally
+openssl: The term 'openssl' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+=>  use here on below site
+    https://www.cryptool.org/en/cto/openssl
