@@ -13,7 +13,9 @@ const MyProfile = () => {
 
 	useEffect(() => {
 		const fetchPosts = async () => {
-			const response = await fetch(`/api/users/${session?.user.id}/posts`)
+			const response = await fetch(`/api/users/${session?.user.id}/posts`, {
+				cache: "no-store",
+			})
 			const data = await response.json()
 
 			setMyPosts(data)
@@ -33,6 +35,7 @@ const MyProfile = () => {
 			try {
 				await fetch(`/api/prompt/${post._id.toString()}`, {
 					method: "DELETE",
+					cache: "no-store",
 				})
 
 				const filteredPosts = myPosts.filter((item) => item._id !== post._id)
